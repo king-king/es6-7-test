@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+	let promise = new Promise( function ( resolve , reject ) {
+//		console.log( "executor" );
+		// reject和resolve不能共存，如果共存，则谁先执行谁起作用
+		setTimeout( function () {
+			console.log( "before" );
+		} , 0 );
+		reject();
+		resolve();
+		setTimeout( function () {
+			console.log( "after" );
+		} , 0 );
+//		console.log( "executor last" );
+	} );
+
+	promise.then( function () {
+		console.log( "resolved" );
+	} , function () {
+		console.log( "rejected" );
+	} );
+
+	//	console.log( "code 1" );
+</script>
+</body>
+</html>
