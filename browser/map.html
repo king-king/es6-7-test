@@ -9,8 +9,11 @@
 	let set = new Set();
 	set.add( 2 );
 	set.add( "2" );
-	set.add( { year : 2 } )
+	set.add( { year : 2 } );
 	console.log( set.size );
+
+	let arr = [ ...new Set( [ 1 , 1 , 1 , 12 , 2 , 2 , ] ) ];
+	console.log( arr )
 </script>
 </body>
 </html>
